@@ -6,7 +6,7 @@
     section e jogar dentro do yield
 --}}
 <h2 align="center"> Tabela de produtos</h2>
-<a href="{{url('sales/form-adicionar')}}" class="btn btn-primary float-right mb-2">
+<a href="{{url('initial_page/form-adicionar')}}" class="btn btn-primary float-right mb-2">
     Adicionar</a></th>
 
     <table class="table table-striped table-dark">

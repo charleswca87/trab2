@@ -14,10 +14,10 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', 'pagecontroller@sales');
-Route::get('/sales', 'pagecontroller@sales');
-Route::get('/sales/form-adicionar', 'pagecontroller@formAdicionar');
-Route::post('/sales/adicionar', 'pagecontroller@adicionar');
-Route::get('/sales/excluir/{id}', 'pagecontroller@excluir');
-Route::get('/sales/editar/{id}', 'pagecontroller@form_editar');
-Route::get('/sales/editar', 'pagecontroller@editar');
+Route::get('/', 'pagecontroller@initial_page');
+Route::get('/initial_page', 'pagecontroller@initial_page');
+Route::get('/initial_page/form-adicionar', 'pagecontroller@formAdicionar');
+Route::post('/initial_page/adicionar', 'pagecontroller@adicionar');
+Route::get('/initial_page/excluir/{id}', 'pagecontroller@excluir');
+Route::get('/initial_page/editar/{id}', 'pagecontroller@form_editar');
+Route::get('/initial_page/editar', 'pagecontroller@editar');

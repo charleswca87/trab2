@@ -10,13 +10,17 @@ use App\Http\Requests\ProductRequest;
 class pagecontroller extends Controller
 {
     //
-    public function sales()
+    public function initial_page()
     {
-        $dados = Products::all();
-        return view('sales')->with('sales',$dados);
+        $prod = Products::all();
+        return view('sale')->with('product',$prod);
     }
 
-
+     public function sale()
+    {
+        $prod = $this->product->all();
+        return view('initial_page')->with('initial_page',$prod);
+    }
     public function formAdicionar()
     {
         $prod = Products::all();
@@ -26,7 +30,7 @@ class pagecontroller extends Controller
     public function adicionar(ProductRequest $request)
     {
         Product::create($request->input());
-        return redirect()->action('pagecontroller@sales');
+        return redirect()->action('pagecontroller@initial_page');
 
     }
     public function editar(ProductRequest $request)
@@ -34,7 +38,7 @@ class pagecontroller extends Controller
 
         Product::find($request->id)->update($request->input());
 
-        return redirect()->action('pagecontroller@sales');
+        return redirect()->action('pagecontroller@initial_page');
     }
     public function excluir($id)
     {
@@ -43,6 +47,6 @@ class pagecontroller extends Controller
 
 
 
-        return redirect()->action('pagecontroller@sales');
+        return redirect()->action('pagecontroller@posts');
     }
 }
