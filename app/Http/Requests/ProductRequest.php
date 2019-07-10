@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'id'=>'required',
+            'unity'=>'required',
             'description'=>'required|min:3|max:255',
             'price'=>'required',
             'amount'=>'required',
@@ -58,6 +59,7 @@ class ProductRequest extends FormRequest
             'descrition' => 'Descrição',
             'pride' => 'Preço',
             'amount' => 'Quantidade',
+            'unity' => 'Quantidade',
         ];
     }
 

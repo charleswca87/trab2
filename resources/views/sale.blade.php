@@ -6,6 +6,8 @@
     section e jogar dentro do yield
 --}}
 <h2 align="center"> Tabela de produtos</h2>
+<a href="{{url('initial_page/form-adicionar')}}" class="btn btn-primary float-right mb-2">
+    Adicionar</a></th>
 
     <table class="table table-striped table-dark">
         <tr>
@@ -15,24 +17,21 @@
                 <th scope="col">Preço</th>
                 <th scope="col">Quantidade</th>
                 <th>Opções</th>
-                <th><a href="{{url('/form-adicionar')}}" class="btn btn-primary float-right mb-2">
-                    Adicionar</a></th>
-              </tr>
             </thead>
 
-</table>
+
 @forelse ($product as $sales)
         <tr>
-            <td> {{$products->id}} </td>
-            <td> {{$products->descrition}} </td>
-            <td> {{$products->unity}} </td>
-            <td> {{$products->price}} </td>
-            <td> {{$products->amount}} </td>
+            <td> {{$sales->id}} </td>
+            <td> {{$sales->description}} </td>
+            <td> {{$sales->unity}} </td>
+            <td> {{$sales->price}} </td>
+            <td> {{$sales->amount}} </td>
             <td>
-                <a class="btn btn-outline-secondary" href="{{url('/sale/editar/' . $product->id)}}">
+                <a class="btn btn-outline-secondary" href="{{url('/sale/editar/' . $sales->id)}}">
                     Editar
                 </a>
-                <a class="btn btn-outline-secondary" href="{{url('/sale/excluir/' . $product->id)}}">
+                <a class="btn btn-outline-secondary" href="{{url('/sale/excluir/' . $sales->id)}}">
                     Excluir
                 </a>
             </td>
@@ -42,4 +41,5 @@
             <td colspan="5">Não há produtos cadastrados.</td>
         </tr>
     @endforelse
+</table>
 @endsection
