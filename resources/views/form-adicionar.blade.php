@@ -1,49 +1,43 @@
-@extends('principal')
+@extends('main')
 
-@section('conteudo-principal')
+@section('content-main')
 
-<h2>Adicionar Post</h2>
+<h2>Adicionar Sale</h2>
 <hr />
 
-<form method="post" action="{{url('/posts/adicionar')}}">
+<form method="post" action="{{url('/sale/adicionar')}}">
 
     @csrf
 
     <div class="form-group">
-        <label for="titulo">Titulo</label>
-        <input value="{{old('titulo')}}" id="titulo" class="form-control" name="titulo" type="text">
+        <label for="descrition">Descrição</label>
+        <input value="{{old('descrição')}}" id="descrition" class="form-control" name="descrição" type="text">
 
-        @error('titulo')
+        @error('Descrição')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 
     <div class="form-group">
-        <label for="categoria">Categoria</label>
-        <select id="categoria" class="form-control" name="categoria_id">
-            <option value="">Selecione</option>
+        <label for="unity">Unidade</label>
 
-            @foreach ($categorias as $categoria)
-
-                <option value="{{$categoria->id}}"> {{$categoria->nome}} </option>
-
-            @endforeach
-        </select>
-
-        @error('categoria_id')
+        @error('unity')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-group">
-        <label for="texto">Texto</label>
-        <textarea id="texto" class="form-control" rows="3" name="texto">{{old('texto')}}</textarea>
+        <label for="pride">Preço</label>
+        <input id="pride" class="form-control" rows="3" name="pride">{{old('preço')}}
+        <div class="form-group">
+            <label for="amount">Quantidade</label>
+            <input id="amount" class="form-control" rows="3" name="amount">{{old('Quantidade')}}
 
-        @error('texto')
+        @error('pride')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 
-    <button class="btn btn-primary" type="submit">Enviar</button>
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
 
 </form>
 

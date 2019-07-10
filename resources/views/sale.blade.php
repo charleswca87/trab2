@@ -7,7 +7,6 @@
 --}}
 <h2 align="center"> Tabela de produtos</h2>
 
-
     <table class="table table-striped table-dark">
         <tr>
                 <th scope="col">ID prod.</th>
@@ -16,6 +15,8 @@
                 <th scope="col">Preço</th>
                 <th scope="col">Quantidade</th>
                 <th>Opções</th>
+                <th><a href="{{url('/form-adicionar')}}" class="btn btn-primary float-right mb-2">
+                    Adicionar</a></th>
               </tr>
             </thead>
 

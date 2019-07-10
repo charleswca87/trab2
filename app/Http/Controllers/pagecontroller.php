@@ -20,4 +20,10 @@ class pagecontroller extends Controller
         $prod = $this->product->all();
         return view('product.sale')->with('sale',$prod);
     }
+    public function adicionar(ProductRequest $request)
+    {
+        products::create($request->input());
+        return redirect()->action('pagecontroller@initial_page');
+
+    }
 }
