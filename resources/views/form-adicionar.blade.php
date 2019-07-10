@@ -5,7 +5,7 @@
 <h2>Adicionar Sale</h2>
 <hr />
 
-<form method="post" action="{{url('/initial_page/adicionar')}}">
+<form method="post" action="{{url('/sales/adicionar')}}">
 
     @csrf
 
@@ -20,7 +20,7 @@
 
     <div class="form-group">
         <label for="unity">Unidade</label>
-        <input value="{{old('Kg,L,TL')}}" id="unity" class="form-control" name="unidade" type="text">
+        <input value="{{old('peso')}}" id="unity" class="form-control" name="unidade" type="text">
         @error('Unidade')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

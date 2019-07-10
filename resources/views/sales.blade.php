@@ -6,7 +6,7 @@
     section e jogar dentro do yield
 --}}
 <h2 align="center"> Tabela de produtos</h2>
-<a href="{{url('initial_page/form-adicionar')}}" class="btn btn-primary float-right mb-2">
+<a href="{{url('sales/form-adicionar')}}" class="btn btn-primary float-right mb-2">
     Adicionar</a></th>
 
     <table class="table table-striped table-dark">
@@ -28,10 +28,10 @@
             <td> {{$sales->price}} </td>
             <td> {{$sales->amount}} </td>
             <td>
-                <a class="btn btn-outline-secondary" href="{{url('/sale/editar/' . $sales->id)}}">
+                <a class="btn btn-outline-secondary" href="{{url('/sales/editar/' . $sales->id)}}">
                     Editar
                 </a>
-                <a class="btn btn-outline-secondary" href="{{url('/sale/excluir/' . $sales->id)}}">
+                <a class="btn btn-outline-secondary" href="{{url('/sales/excluir/' . $sales->id)}}">
                     Excluir
                 </a>
             </td>

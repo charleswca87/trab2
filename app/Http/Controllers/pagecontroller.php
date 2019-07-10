@@ -10,34 +10,39 @@ use App\Http\Requests\ProductRequest;
 class pagecontroller extends Controller
 {
     //
-    public function initial_page()
+    public function sales()
     {
-        $prod = Products::all();
-        return view('sale')->with('product',$prod);
+        $dados = Products::all();
+        return view('sales')->with('sales',$dados);
     }
 
-     public function sale()
-    {
-        $prod = $this->product->all();
-        return view('initial_page')->with('initial_page',$prod);
-    }
+
     public function formAdicionar()
     {
         $prod = Products::all();
 
-        return view('form-adicionar')->with('categorias', $prod);
+        return view('form-adicionar')->with('Product', $prod);
     }
     public function adicionar(ProductRequest $request)
     {
         Product::create($request->input());
-        return redirect()->action('pagecontroller@initial_page');
+        return redirect()->action('pagecontroller@sales');
 
     }
     public function editar(ProductRequest $request)
     {
 
-        Poroduct::find($request->id)->update($request->input());
+        Product::find($request->id)->update($request->input());
 
-        return redirect()->action('pagecontroller@initial_page');
+        return redirect()->action('pagecontroller@sales');
+    }
+    public function excluir($id)
+    {
+        //Excluir via eloquent quando tem o id
+        Product::destroy($id);
+
+
+
+        return redirect()->action('pagecontroller@sales');
     }
 }
